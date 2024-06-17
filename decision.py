@@ -99,6 +99,8 @@ def H(_D):
             cnt = map(lambda x: len(x[1]) / total, D.split_with(A).items())
             h = 0
             for p in cnt:
+                if p == 0:
+                    continue
                 h += -p * log2(p)
             return h
 
@@ -300,7 +302,7 @@ if __name__ == "__main__":
 
     root = Tree(init_set=pool)
     _traits = deepcopy(traits)
-    generate(root, _traits)
+    generate(root, _traits, algo=settings.algo)
     # print(root.to_graph())
     draw(root.to_graph())
 
