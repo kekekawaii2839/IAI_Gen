@@ -11,7 +11,7 @@ fonttools==4.33.3
 igraph==0.9.11
 ipython==8.4.0
 jedi==0.18.1
-kaleido==0.2.1
+kaleido==0.1.0.post1
 kiwisolver==1.4.2
 matplotlib==3.5.2
 matplotlib-inline==0.1.3

@@ -76,6 +76,7 @@ class Tree:
             v = base.add_vertex(which=ch.which, tag=ch.tag, gain=ch.gain)
             base.add_edge(this, v, case=ch.from_val)
             ch.to_graph(base, v)
+        base.vs["name"] = range(len(base.vs))
         return base
 
 class Trait(str):
@@ -154,7 +155,8 @@ def generate(D: Tree, A: list, algo: str = "ID3"):
 
 
 def draw(G: Graph):
-    lay = G.layout('tree', root=0)
+    print(G)
+    lay = G.layout('tree', root=[G.vs.find(name=0).index])
     position = {k: (lay[k][0], lay[k][1]) for k in range(len(G.vs))}
     Y = [lay[k][1] for k in range(len(G.vs))]
     M = max(Y)
